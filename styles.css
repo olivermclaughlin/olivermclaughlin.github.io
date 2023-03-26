@@ -1,0 +1,82 @@
+@font-face {
+    font-family: Growland;
+    src: url("Growland.otf") format("opentype");
+}
+
+
+html, body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    background-color: darkgray;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+.hero{
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url(img/sites.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hero div h1{
+    font-size: 20vw;
+    font-family: Growland;
+    max-width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    position: relative;
+}
+.hero div h1:after{
+    content: 'Greggle';
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url(img/pedoTest.png);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation-name: pedo;
+    animation-duration: 5s;
+    color: rgba(255, 255, 255, 0.1);
+    background-size: auto 80%;
+    background-position: -50%;
+    margin: 0;
+    background-repeat: no-repeat;
+    transition: 2s background-position linear;
+    animation-delay: 5s;
+}
+
+@keyframes pedo {
+    10% { background-position: -50%;}
+    40% { background-position: 3%;}
+    45% { background-position: 1% -70%;}
+    50% { background-position: 1%;}
+    60% { background-position: -50%;}
+    100% {background-position: 200%;}
+  }
+
+.testimonials{
+    border: 1px solid blue;
+    min-height: 400px;
+}
+.black_checker{
+    min-height: 500px;
+    border: 1px solid red;
+}
+footer{
+    border: 1px solid green;
+}
