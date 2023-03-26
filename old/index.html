@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="shapeContainer">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Anton');
+	</style>
+	<div id="backgroundText"></div>
+	<div class="scene">
+		<div class="shape cuboid-1 cub-1">
+			<div class="face ft"></div>
+			<div class="face bk"></div>
+			<div class="face rt"></div>
+			<div class="face lt"></div>
+			<div class="face bm"></div>
+			<div class="face tp">
+				<img src="keyboard.jpg">
+			</div>
+		</div>
+		<div class="shape cuboid-2 cub-2">
+			<div class="face ft">
+				<img id="screen" src="desktop.jpg">
+			</div>
+			<div class="face bk">
+				<h1>asus</h1>
+			</div>
+			<div class="face rt"></div>
+			<div class="face lt"></div>
+			<div class="face bm"></div>
+			<div class="face tp"></div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+		const text = "Oliver is a nonce ";
+		const container = document.getElementById("backgroundText");
+		const screen = document.getElementById("screen");
+		var currentLetter = 0;
+		var counter = 0;
+		var speed = 100;
+		console.log(container);
+		function typer(){
+			if(counter < 400){
+				container.innerHTML += text.charAt(currentLetter);
+				currentLetter++
+				counter++
+				if(currentLetter === text.length){
+					currentLetter = 0;
+				}
+				if(counter % 8 == 0 ){
+					console.log(counter);
+					console.log(counter % 7);
+					screen.src = "oliver.jpg";
+				}else if(counter % 10 == 0){
+					screen.src = "oliver.jpg";
+				}else{
+					screen.src = "desktop.jpg";
+				}
+				setTimeout(typer, speed);
+			}			
+		}
+		typer();
+	</script>
+</html>
