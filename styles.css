@@ -17,12 +17,14 @@ body{
     min-height: 100%;
     box-sizing: border-box;
 }
-
+section{
+  position: relative;
+}
 .hero{
     height: 100vh;
     box-sizing: border-box;
     position: relative;
-    background-image: url(img/pedo2.jpg);
+    background-image: url(img/rat.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -31,6 +33,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 600;
 }
 .hero div h1{
     font-size: 20vw;
@@ -46,7 +49,7 @@ body{
     left: 0px;
     width: 100%;
     height: 100%;
-    background: url(img/pedoTest.png);
+    background: url(img/pedo1.png);
     background-clip: text;
     -webkit-background-clip: text;
     animation-name: pedo;
@@ -59,7 +62,19 @@ body{
     transition: 2s background-position linear;
     animation-delay: 5s;
 }
-
+.pic_rotate{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  box-sizing: border-box;
+  background-position: center center;
+  background-image: url("img/greg3.jpg");
+  animation-name:  hero1;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+}
 @keyframes pedo {
     10% { background-position: -50%;}
     40% { background-position: 3%;}
@@ -79,4 +94,17 @@ body{
 }
 footer{
     border: 1px solid green;
+}
+
+
+@keyframes img_rotate {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+@keyframes hero1 {
+  0% {background-image: url("img/greg3.jpg")}
+  25% {background-image: url("img/greg1.jpg")}
+  50% {background-image: url("img/oliv1.jpg")}
+  75% {background-image: url("img/greg5.jpg")}
+  100% {background-image: url("img/josh1.jpg")}
 }
